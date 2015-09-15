@@ -1,0 +1,262 @@
+//helloName 
+
+public String helloName(String name) {
+  return "Hello "+ name +"!";
+}
+
+//makeabba
+public String makeAbba(String a, String b) {
+  return a+b+b+a;
+}
+
+//maketag
+public String makeTags(String tag, String word) {
+  return"<"+tag+">"+word+"</"+tag+">";
+}
+
+//makeoutworld
+
+public String makeOutWord(String out, String word) {
+  return out.substring(0,2)+word+out.substring(2,4);
+}
+
+//ExtraEnd
+
+public String extraEnd(String str) {
+  String str1 = str.substring(str.length()-2);
+  return(str1+str1+str1);
+}
+
+//firsttwo
+
+public String firstTwo(String str) {
+ if(str.length()<2)
+  return str;
+  String first = str.substring(0,2);
+  return first;
+}
+
+//firsthalf
+public String firstHalf(String str) {
+  int len = str.length()/2;
+  return str.substring(0,len);
+}
+
+//withoutend 
+public String withoutEnd(String str) {
+  return str.substring(1,str.length()-1);
+}
+
+//combineString
+
+public String comboString(String a, String b) {
+String ret = (a.length()>b.length())?  b+a+b:a+b+a;
+  return ret;
+}
+
+//nonstart
+
+public String nonStart(String a, String b) {
+  return a.substring(1,a.length())+b.substring(1,b.length());
+}
+
+//left2
+public String left2(String str) {
+  return str.substring(2,str.length())+str.substring(0,2);
+}
+
+//right2
+public String right2(String str) {
+ int len = str.length();
+  return str.substring(len-2)+str.substring(0,len-2);
+}
+
+//substring
+
+public String theEnd(String str, boolean front) {
+  if(front) return str.substring(0,1);
+  else return str.substring(str.length()-1);
+}
+
+//withOutEnd
+
+public String withouEnd2(String str) {
+  String retStr = "";
+  if(str.length()<=2) return retStr;
+  else return str.substring(1,str.length()-1);
+}
+
+//middleTwo
+
+public String middleTwo(String str) {
+  int len = str.length();
+  if(len<=2) return str;
+  else 
+  return str.substring((len/2)-1,(len/2)+1);
+}
+
+//Endsly
+
+public boolean endsLy(String str) {
+  if(str.length()<2) return false;
+  else if(str.length()>=2 && str.substring(str.length()-2).equals("ly"))
+  return true;
+  else return false;
+    
+}
+
+//ntwice
+
+public String nTwice(String str, int n) {
+
+  if(str.length()<= 2) return str;
+  else return str.substring(0,n)+str.substring(str.length()-n,str.length());
+}
+
+//twoChar
+
+public String twoChar(String str, int index) { 
+if(str.length()-1<=index || str.length()<=index ||index<=0)
+  return str.substring(0,2);
+  else return str.substring(index,index+2);
+}
+
+//middleThree
+
+public String middleThree(String str) {
+  int len2 = str.length()/2;
+  if(str.length() <3)
+   return "";
+  else if(str.length() <=3) return str;
+  else return str.substring(len2-1, len2+2);
+  
+  }
+
+//hasBad
+public boolean hasBad(String str) {
+  if(str.length()<3) return false;
+  else if(str.length()==3) return  str.equals("bad");
+  else if(str.substring(1,4).equals("bad")) return true;
+  else if(str.substring(0,3).equals("bad")) return true;
+  else return false; 
+}
+
+//atFirst
+public String atFirst(String str) {
+  if(str.length()<1) return "@@";
+  else if(str.length()<2) return str+"@";
+  else  return str.substring(0,2);
+}
+
+//lastChars
+public String lastChars(String a, String b) {
+  int alen = a.length();
+  int blen = b.length();
+  if(alen==0 && blen==0) return "@@";
+  else if(alen==0) return "@"+b.substring(blen-1);
+  else if(blen==0) return a.substring(0,1)+"@";
+  else return a.substring(0,1)+b.substring(blen-1);
+ 
+}
+
+//conCat
+public String conCat(String a, String b) {
+  int alen = a.length();
+  int blen = b.length();
+  if(alen == 0 || blen == 0 ) return a +b; 
+  else if( a.substring(alen-1).equals(b.substring(0,1))) return a.substring(0,alen)+b.substring(1,blen);
+  else return a + b;
+  
+}
+
+//lastTwo
+
+public String lastTwo(String str) {
+  if (str.length()<2) return str;
+  else return str.substring(0,str.length()-2)+  str.substring(str.length()-1,str.length())
++ str.substring(str.length()-2,str.length()-1);
+}
+
+//seeColor
+
+public String seeColor(String str) {
+  if(str.length()<3) return "";
+  else if (str.substring(0,3).equals("red")) return "red";
+  else if(str.length()<4) return "";
+  else if(str.substring(0,4).equals("blue")) return "blue";
+  return "" ;
+}
+
+//frontAgain
+public boolean frontAgain(String str) {
+  if(str.length()<2) return false; 
+  if(str.length()<3) return true; 
+  else if(str.substring(0,2).equals(str.substring(str.length()-2,str.length()))) return true;
+  else return false;
+  
+}
+
+//minCat
+public String minCat(String a, String b) {
+   if(a.length() == b.length()) return a + b;
+   int len = Math.min(a.length(), b.length());
+   return a.substring(a.length() - len) + b.substring(b.length() - len);
+}
+
+//extraFront
+public String extraFront(String str) {
+  if(str.length()<3) 
+  return str+ str+str;
+  else return str.substring(0,2)+str.substring(0,2)+str.substring(0,2);
+}
+
+//without2
+public String without2(String str) {
+  if(str.length()<2) return str;
+  else if(str.substring(0,2).equals(str.substring(str.length()-2))) return str.substring(2);
+  return str;
+}
+
+//defront
+public String deFront(String str) {    
+  if(str.length() == 0) return str;
+        if(str.length() >= 2){
+            if(str.charAt(0) == 'a' && str.charAt(1) == 'b') return str;
+            if(str.charAt(0) == 'a') return "a" + str.substring(2);
+            if(str.charAt(1) == 'b') return str.substring(1);
+            return str.substring(2);
+        }
+        if(str.length() == 1 && str.charAt(0) == 'a') return str;
+        return "";
+}
+
+//startWord
+public String startWord(String str, String word) {
+  if(str.length() >= word.length()){
+  if(str.substring(1, word.length()).equals(word.substring(1, word.length())) || str.substring(0,word.length()).equals(word))
+   return str.substring(0, word.length());
+  else
+   return "";
+ 
+ }
+  else
+   return "";
+}
+
+//withoutX
+public String withoutX(String str) {
+        if(str.length() < 1) return str;
+        if(str.charAt(0) == 'x') str = str.substring(1);
+        if(str.length() < 1) return str;
+        if(str.charAt(str.length()-1) == 'x') str = str.substring(0, str.length()-1);
+        return str;
+}
+
+//public String withoutX2(String str) {
+        if(str.length() < 1) return str;
+        if(str.length() == 1 && str.charAt(0) == 'x') return "";
+        if(str.charAt(1) == 'x') str = str.charAt(0) + str.substring(2);
+        if(str.length() < 1) return str;
+        if(str.charAt(0) == 'x') str = str.substring(1);
+        return str;
+}

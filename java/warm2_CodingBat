@@ -1,0 +1,228 @@
+/*stringTimes
+*Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+*/
+public String stringTimes(String str, int n) {
+  StringBuilder strb = new StringBuilder();
+  for(int i=0;i<n;i++)
+  strb.append(str);
+  return strb.toString();
+}
+
+/******************************
+*********frontTimes ***********
+******************************/
+public String frontTimes(String str, int n) {
+  StringBuilder strb = new StringBuilder();
+  int len = 0;
+  if(str.length()<=2)
+  {
+   len = str.length();
+  }
+  else
+  {
+   len = 3;  
+  }
+       for(int i=0;i<n;i++)
+      {
+      strb.append(str.substring(0,len));
+      }
+      return strb.toString();
+
+}
+
+/******************************
+*********countXX***************
+******************************/
+int countXX(String str) {
+  int countxx = 0;
+  for(int i = 0; i < str.length()-1 ; i++){
+    if(str.substring(i,i+2).equals("xx"))
+    {
+     countxx++;
+    }
+  }
+  return countxx;
+}
+
+
+/*******************************
+***********doubleX*************/
+boolean doubleX(String str) {
+  int index = str.indexOf("x");
+  if(index >= 0)
+  {
+    if(index+1>=str.length())
+    return false;
+    else
+   return str.substring(index+1,index+2).equals("x");
+ 
+  }
+  return false;
+ 
+ }
+ 
+ 
+/*******************************
+***********doubleX*************/
+
+public String stringBits(String str) {
+  StringBuilder strb = new StringBuilder();
+  for(int i=0;i<str.length(); i=i+2)
+  {
+  strb.append(str.charAt(i));
+  }
+  return strb.toString();
+}
+
+ 
+/*******************************
+***********stringSplosion*******/
+
+public String stringSplosion(String str) {
+  String strtemp ="";
+  for(int i=0; i<str.length();i++)
+   strtemp = strtemp + str.substring(0,i+1);
+  return strtemp;
+}
+
+/*********************************
+*************last2****************/
+
+public int last2(String str) {
+  
+  if(str.length()<2)
+   return 0;
+  
+  String lastTwo = str.substring(str.length()-2);
+  int count=0;
+  for(int i=0; i< str.length()-2 ; i++)
+  {
+   if(str.substring(i,i+2).equals(lastTwo))
+    count++;
+  }
+  return count++;
+}
+
+/*********************************
+*************arrayCount9**********/
+
+public int arrayCount9(int[] nums) {
+   int count = 0;
+  for(int i=0;i<nums.length;i++){
+   if(nums[i]==9){
+    count++;
+   }
+  }
+  return count;
+}
+
+/*********************************
+*************arrayCount9**********/
+
+public boolean arrayFront9(int[] nums) {
+     int count = 0;
+     int len = (nums.length>4)?4:nums.length;
+     
+  for(int i=0;i<len;i++){
+   if(nums[i]==9){
+    return true;
+   }
+  }
+  return false;
+}
+
+/*********************************
+*************array123************/
+
+public boolean array123(int[] nums) {
+   for(int i=0;i<nums.length-2;i++){
+   if(nums[i] == 1 && nums[i+1] == 2 && nums[i+2]==3)
+    return true;
+  }
+  return false;
+
+}
+
+/********************************
+************stringMatch*********/
+
+public int stringMatch(String a, String b) {
+  int len =Math.min(a.length(),b.length());
+  int c =0;
+  for(int i=0; i<len-1;i++){
+  String aSb = a.substring(i,i+2);
+  String bSb = b.substring(i,i+2);
+  if(aSb.equals(bSb)) c++;
+  }
+  return c;
+}
+
+/********************************
+************stringX*********/
+
+public String stringX(String str) {
+ int len = str.length();
+ StringBuilder  strb = new StringBuilder();
+  for(int i=0; i< len; i++)
+  {
+   if( !( i>0 && i <(len-1) && str.substring(i,i+1).equals("x"))) 
+   strb.append(str.charAt(i));
+  }
+  return strb.toString();
+}
+
+/*********************************
+**************altPairs************/
+
+public String altPairs(String str) {
+  int len = str.length();
+  StringBuilder strb = new StringBuilder();
+  for(int i=0; i<len; i +=4)
+  {
+   int sublen = i+2;
+   sublen = (sublen>len)?len:sublen;
+    strb.append(str.substring(i,sublen));
+  }
+  return strb.toString();
+}
+
+/*********************************
+**************stringYak***********/
+
+public String stringYak(String str) {
+
+  String result = "";
+  for(int i=0;i<str.length();i++){
+   if(i+2<str.length() && str.charAt(i)=='y' && str.charAt(i+2)=='k'){
+    i=i+2;
+  }
+  else{
+   result = result + str.charAt(i);
+  }
+ }
+ return result;
+}
+
+/*********************************
+**************array667***********/
+
+public int array667(int[] nums) {
+    int count = 0;
+  for(int i=0; i<nums.length-1; i++){
+   if(nums[i] == 6 && nums[i+1] == 6 || nums[i] == 6 && nums[i+1] == 7)
+    count++;
+  }
+  return count;
+}
+
+
+/*********************************
+**************noTriples***********/
+
+public boolean noTriples(int[] nums) {
+   for(int i=0; i<nums.length-2; i++){
+   if(nums[i] ==  nums[i+1]  && nums[i+1] == nums[i+2])
+     return false;
+  }
+  return true;
+}
